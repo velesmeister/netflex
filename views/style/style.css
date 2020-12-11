@@ -1,9 +1,71 @@
-* {
-  margin: 0;
-  padding: 0;
+body{
+  background-color: #ECF5FE
 }
 
-body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+.content{
+  padding: 0.5% 10%;
 }
 
+.header{
+  text-align: center;
+  font-family: Langar;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: normal;
+  height: 20%;
+}
+
+.container{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.but{
+  display: block;
+  font-size: 24px;
+  color: #000000;
+  text-decoration: none;
+  width: 300px;
+  height: 100px;
+  background-color: #CDF4EE;
+  text-align: center;
+  line-height: 100px;
+  font-family: Langar;
+  border: 1px solid #8BE5D7;
+}
+
+.tasks div:nth-child(2n){
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  background-color: #B6DFF6;
+  text-align: center;
+  line-height: 60px;
+  border: 1px solid #5CB6EB;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.tasks div:nth-child(2n + 1){
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  background-color: #B6DFF6;
+  text-align: center;
+  line-height: 60px;
+  border: 1px solid #5CB6EB;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.number{
+  text-decoration: none;
+  color: #000000;
+  font-family: Langar;
+}
