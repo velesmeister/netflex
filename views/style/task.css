@@ -28,12 +28,48 @@ body{
     grid-template-columns: 20fr 1fr 9fr;
 }
 
+.header {
+    display: flex;
+    flex-direction: column;
+}
+
+.number-task {
+    display: flex;
+    flex-direction: row;
+}
+
+.number-task div:nth-child(2n) {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    text-align: center;
+    line-height: 50px;
+    background-color: #B6DFF6;
+    border: 1px solid #5CB6EB;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.number-task div:nth-child(2n + 1) {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    text-align: center;
+    line-height: 50px;
+    background-color: #B6DFF6;
+    border: 1px solid #5CB6EB;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.number-tasks:hover {
+    opacity: 0.6;
+}
+
 .number {
     opacity: 0.4;
     font-size: 36px;
     font-family: Langar;
-    display: flex;
-    align-items: center;
 }
 
 .timer {

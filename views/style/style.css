@@ -62,6 +62,7 @@ body{
   line-height: 60px;
   border: 1px solid #5CB6EB;
   margin: 5px 10px;
+  cursor: pointer;
 }
 
 .tasks div:nth-child(2n + 1){
@@ -74,14 +75,11 @@ body{
   line-height: 60px;
   border: 1px solid #5CB6EB;
   margin: 5px 10px;
+  cursor: pointer;
 }
 
-.tasks div:nth-child(2n + 1):hover {
-  background: #4dafe9;
-}
-
-.tasks div:nth-child(2n):hover {
-  background: #4dafe9;
+.number:hover {
+  opacity: 0.6;
 }
 
 .number > a {

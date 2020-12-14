@@ -21,6 +21,11 @@ app.get('/task', ((req, res, next) => {
     res.sendFile(path.resolve('views', 'task.html'));
 }))
 
+app.get('/theory', ((req, res, next) => {
+    res.status(200);
+    res.sendFile(path.resolve('views', 'theory.html'));
+}))
+
 // Тут клиент пытается создать с нами стабильное соедениние
 io.on('connection', (socket) => {
     // Тут уже создал, теперь мы можем с ним общаться с помощью объекта socket
