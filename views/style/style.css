@@ -1,24 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+
 body{
-  background-color: #ECF5FE
+  background-color: #ECF5FE;
 }
 
-.content{
-  padding: 0.5% 10%;
+.content {
+  height: 100vh;
 }
 
-.header{
-  text-align: center;
-  font-family: Langar;
-  font-size: 36px;
-  font-style: normal;
-  font-weight: normal;
-  height: 20%;
+.header {
+  box-shadow: 5px 5px 15px 5px #d9ebfd;
+  background: #d9ebfd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
 }
 
-.container{
+.container {
+  padding: 0 10%;
+  height: 80vh;
   display: grid;
   grid-template-columns: 1fr 2fr;
 }
+
+.exam {
+  display: flex;
+  justify-content: center;
+}
+
 
 .but{
   display: block;
@@ -43,10 +61,7 @@ body{
   text-align: center;
   line-height: 60px;
   border: 1px solid #5CB6EB;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin: 5px 10px;
 }
 
 .tasks div:nth-child(2n + 1){
@@ -58,14 +73,21 @@ body{
   text-align: center;
   line-height: 60px;
   border: 1px solid #5CB6EB;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin: 5px 10px;
 }
 
-.number{
-  text-decoration: none;
+.tasks div:nth-child(2n + 1):hover {
+  background: #4dafe9;
+}
+
+.tasks div:nth-child(2n):hover {
+  background: #4dafe9;
+}
+
+.number > a {
   color: #000000;
-  font-family: Langar;
+}
+
+.number:hover {
+  background: #116291;
 }
