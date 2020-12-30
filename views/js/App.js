@@ -1,12 +1,13 @@
 class App {
     constructor() {
         this.socket = io();
-        this.listen();
-    }
+        this.router = new Router([
+            new Route('task', 'task.html'),
+            new Route('/', 'index.html', true)
+        ]);
 
-    doSomeLogic() {
-        const msg = 'Hi there';
-        this.socket.emit('message', msg); // Отправили сообщение на сервер
+
+        this.listen();
     }
 
     listen() {

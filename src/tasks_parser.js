@@ -59,8 +59,6 @@ const updateDbTasks = async () => {
 
         client.close();
     })
-
-
 }
 
 module.exports = {updateDbTasks};

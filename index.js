@@ -31,17 +31,14 @@ app.get('/theory', ((req, res, next) => {
     res.sendFile(path.resolve('views', 'theory.html'));
 }))
 
-// Тут клиент пытается создать с нами стабильное соедениние
 io.on('connection', (socket) => {
-    // Тут уже создал, теперь мы можем с ним общаться с помощью объекта socket
     console.log('a user connected');
 
-    // Обрабатываем сообщение с кллиента
     socket.on('message', (msg) => {
         console.log(msg);
     })
 
-    socket.emit('message', 'wsuuup'); // Отправили клиенту
+    socket.emit('message', 'wsuuup');
 })
 
 server.listen(port, () => {
