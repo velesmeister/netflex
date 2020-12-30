@@ -7,3 +7,4 @@ for(let chapter of (chapters.sort((a, b) => {
 }))) {
     chaptersBlock.innerHTML += `<div class="topics"><a class="topic">${chapter}</a></div>`;
 }
+

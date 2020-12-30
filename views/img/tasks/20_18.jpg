@@ -1,0 +1,26 @@
+<HTML><HEAD>
+  <title>Error 404</title>
+  
+</HEAD>
+<BODY>
+<TABLE border=0 height="100%" cellSpacing=0 cellPadding=0 width="100%" valign="top">
+  <TR>
+    <TD vAlign=top width="15%" background="">
+    </TD>
+    <TD width=1 background="" bgColor="#000000"><IMG alt="" src="" width=1 height=1></TD>
+    <TD vAlign=top width=*>
+    <TABLE border=0 cellSpacing=5 cellPadding=5 width="100%" valign="top">
+        <TR>
+          <TD width="100%" class=basic style1>
+          		  	 <p><strong>Error 404 - Page is not, Please go to <a href="https://пдд-экзамен.com">https://пдд-экзамен.com</a></strong><BR></p>
+          </TD>
+          		  	 
+       </TR>
+    </TABLE>
+    </TD>
+    <TD width=1 background="" bgColor="#000000"><IMG alt="" src="" width=1 height=1></TD>
+    <TD vAlign=top width="15%" background="">
+</TD>
+  </TR>
+</TABLE>
+</BODY></HTML>
