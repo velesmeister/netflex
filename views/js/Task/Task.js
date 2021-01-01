@@ -47,7 +47,7 @@ export class Task {
         for (let i = 0; i < this.questions.length; ++i) {
             questionsList += `<div class="number-tasks" id="${i + 1}"><a class="questionSelector">${i + 1}</a></div>`;
         }
-        document.getElementById("questionsList").innerHTML = questionsList;
+        this.questionsList.innerHTML = questionsList;
 
         // Add listeners
         document.addEventListener('click', (e) => {
@@ -61,7 +61,7 @@ export class Task {
                     document.getElementById((this.currentQuestion + 1).toString()).style.background = '#B6DFF6';
                     document.getElementById((this.currentQuestion + 1).toString()).children[0].style.color = black;
                 } else {
-                    this.markSelectedAns(this.questions[this.currentQuestion].selectedAns);
+                    this.markSelectedAns();
                 }
                 this.currentQuestion = parseInt(e.target.id) - 1;
                 this.renderQuestion();
@@ -71,10 +71,14 @@ export class Task {
         this.questionSupportBtn.addEventListener('click', () => { this.showSupport() });
 
         this.timer = setInterval( () => {
-            let [min, sec] = document.getElementById("timer").innerText.split(':').map(t => parseInt(t));
-            [min, sec] = [min + Math.floor((sec + 1) / 60), (sec + 1) % 60]
-            document.getElementById("timer").innerText =
-                `${min < 10 ? '0' + min : min}:${sec < 10 ? '0' + sec : sec}`;
+            try {
+                let [min, sec] = document.getElementById("timer").innerText.split(':').map(t => parseInt(t));
+                [min, sec] = [min + Math.floor((sec + 1) / 60), (sec + 1) % 60]
+                document.getElementById("timer").innerText =
+                    `${min < 10 ? '0' + min : min}:${sec < 10 ? '0' + sec : sec}`;
+            } catch(e) {
+                clearInterval(this.timer);
+            }
         }, 1000);
     }
 
@@ -87,7 +91,7 @@ export class Task {
         this.questionNumber.innerHTML = (this.currentQuestion + 1).toString() + '/' + this.questions.length.toString();
         this.questionText.innerHTML = this.questions[this.currentQuestion].quest;
 
-        this.questionImg.style.backgroundImage = `url(img/tasks/${this.questions[this.currentQuestion].biletNumber}_${this.questions[this.currentQuestion].questNumber}.jpg)`;
+        this.questionImg.style.backgroundImage = `url(img/tasks/${this.questions[this.currentQuestion].biletNumber}_${this.questions[this.currentQuestion].questNumber}.jpg), url(img/noAnswerImg.png)`;
 
         this.questions[this.currentQuestion].v.forEach( (option, ind) => {
             if (option) {
@@ -106,6 +110,7 @@ export class Task {
             this.answerOptions.children[selectedAns - 1].style.background = selectedAns === this.questions[this.currentQuestion].otvet ? green : red;
             this.answerOptions.children[selectedAns - 1].children[0].style.color = white;
 
+            console.log(this.currentQuestion);
             document.getElementById((this.currentQuestion + 1).toString()).style.background = selectedAns === this.questions[this.currentQuestion].otvet ? green : red;
             if (selectedAns !== this.questions[this.currentQuestion].otvet) {
                 this.showSupport();

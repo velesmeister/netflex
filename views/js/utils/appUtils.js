@@ -29,3 +29,13 @@ export const menuOff = () => {
     document.getElementById("menu").className =
         document.getElementById("menu").className.split(' ')[0];
 }
+
+export const loaderOn = () => {
+    document.getElementById("loader").style.display = 'flex';
+    document.getElementById("root").style.display = 'none';
+}
+
+export const loaderOff = () => {
+    document.getElementById("loader").style.display = 'none';
+    document.getElementById("root").style.display = 'block';
+}
