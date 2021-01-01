@@ -1,71 +1,33 @@
 <html>
 <head>
-  <title>Netflex</title>
-  <link id="style" rel="stylesheet" href="style/style.css">
-  <meta charset="UTF-8">
+    <title>Netflex</title>
+    <link rel="stylesheet" href="style/menu.css">
+    <link id="style" rel="stylesheet" href="">
+    <meta charset="UTF-8">
 </head>
+
 <body>
-  <div id="root">
-    <div class="content">
-      <div class="header">
-        <h1>Билеты</h1>
-      </div>
-      <div class="container">
-        <div class="exam">
-          <a href="#task" class="but">Сдать экзамен</a>
-        </div>
-        <div class="tasks">
-          <div class="number"><a href="#task">1</a></div>
-          <div class="number"><a href="#task">2</a></div>
-          <div class="number"><a href="#task">3</a></div>
-          <div class="number"><a href="#task">4</a></div>
-          <div class="number"><a href="#task">5</a></div>
-          <div class="number"><a href="#task">6</a></div>
-          <div class="number"><a href="#task">7</a></div>
-          <div class="number"><a href="#task">8</a></div>
-          <div class="number"><a href="#task">9</a></div>
-          <div class="number"><a href="#task">10</a></div>
-          <div class="number"><a href="#task">11</a></div>
-          <div class="number"><a href="#task">12</a></div>
-          <div class="number"><a href="#task">13</a></div>
-          <div class="number"><a href="#task">14</a></div>
-          <div class="number"><a href="#task">15</a></div>
-          <div class="number"><a href="#task">16</a></div>
-          <div class="number"><a href="#task">17</a></div>
-          <div class="number"><a href="#task">18</a></div>
-          <div class="number"><a href="#task">19</a></div>
-          <div class="number"><a href="#task">20</a></div>
-          <div class="number"><a href="#task">21</a></div>
-          <div class="number"><a href="#task">22</a></div>
-          <div class="number"><a href="#task">23</a></div>
-          <div class="number"><a href="#task">24</a></div>
-          <div class="number"><a href="#task">25</a></div>
-          <div class="number"><a href="#task">26</a></div>
-          <div class="number"><a href="#task">27</a></div>
-          <div class="number"><a href="#task">28</a></div>
-          <div class="number"><a href="#task">29</a></div>
-          <div class="number"><a href="#task">30</a></div>
-          <div class="number"><a href="#task">31</a></div>
-          <div class="number"><a href="#task">32</a></div>
-          <div class="number"><a href="#task">33</a></div>
-          <div class="number"><a href="#task">34</a></div>
-          <div class="number"><a href="#task">35</a></div>
-          <div class="number"><a href="#task">36</a></div>
-          <div class="number"><a href="#task">37</a></div>
-          <div class="number"><a href="#task">38</a></div>
-          <div class="number"><a href="#task">39</a></div>
-          <div class="number"><a href="#task">40</a></div>
-        </div>
-      </div>
+    <!-- menu -->
+    <div class="menu" id="menu">
+        <span class="menu-circle"></span>
+        <a id="menu-toggle" class="menu-link">
+          <span class="menu-icon">
+            <span class="menu-line menu-line-1"></span>
+            <span class="menu-line menu-line-2"></span>
+            <span class="menu-line menu-line-3"></span>
+          </span>
+        </a>
     </div>
-  </div>
+
+    <div class="menu-overlay" id="menu-overlay">
+        <a href="#theory">Теория</a>
+        <a href="#practice">Практика</a>
+    </div>
+    <!-- page content -->
+    <div id="root"> </div>
 </body>
-<script src="js/lib/socket.io.js"></script>
-<script src="js/Router/Router.js"></script>
-<script src="js/Router/Route.js"></script>
-<script src="js/App.js"></script>
-<script>
-  const app = new App();
-</script>
+    <script src="js/lib/socket.io.js"></script>
+
+    <script type="module" src="js/index.js"></script>
 </html>
 

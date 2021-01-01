@@ -1,4 +1,7 @@
-function Router(routes) {
+import { menuOff } from "../utils/appUtils.js";
+import { initTheory } from "../Theory/theory.js";
+
+export function Router(routes) {
     try {
         if (!routes) {
             throw 'error: routes param is mandatory';
@@ -45,18 +48,48 @@ Router.prototype = {
     },
     goToRoute: function (htmlName) {
         (function(scope) {
-            console.log('in go to route');
             const url = '/' + htmlName,
                 xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function () {
                 if (this.readyState === 4 && this.status === 200) {
                     scope.rootElem.innerHTML = this.responseText;
+
+                    // HERE AFTER RENDER EVENTS
+                    if (htmlName === 'theory.html') {
+                        initTheory();
+                    }
+
+                    document.getElementById("style").setAttribute("href", `style/${htmlName.split('.')[0]}.css`);
+                    menuOff();
                 }
             };
             xhttp.open('GET', url, true);
             xhttp.send();
         })(this);
-        document.getElementById("style").setAttribute("href", `${htmlName}.css`);
     }
-
 };
+
+export function Route(name, htmlName, defaultRoute) {
+    try {
+        if(!name || !htmlName) {
+            throw 'error: name and htmlName params are mandatories';
+        }
+        this.constructor(name, htmlName, defaultRoute);
+    } catch (e) {
+        console.error(e);
+    }
+}
+
+Route.prototype = {
+    name: undefined,
+    htmlName: undefined,
+    default: undefined,
+    constructor: function (name, htmlName, defaultRoute) {
+        this.name = name;
+        this.htmlName = htmlName;
+        this.default = defaultRoute;
+    },
+    isActiveRoute: function (hashedPath) {
+        return hashedPath.replace('#', '') === this.name;
+    }
+}
