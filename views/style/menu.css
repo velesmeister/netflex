@@ -86,11 +86,10 @@
     z-index: 1001;
     opacity: 0;
     visibility: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
 }
+
 .menu-overlay.open {
     opacity: 1;
     visibility: visible;
@@ -104,7 +103,82 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
 .overlay-info {
     text-align: center;
     color: #111825;
+}
+
+.menus {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #B6DFF6;
+    font-size: 36px;
+}
+
+a{
+    color: black;
+}
+
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #CDF4EE;
+}
+
+.creature {
+    display: flex;
+    flex-direction: row;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+.create a {
+    color: blue;
+}
+
+.e-mail {
+    width: 356px;
+    height: 40px;
+    background-color: #B6DFF6;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.password {
+    width: 356px;
+    height: 40px;
+    background-color: #B6DFF6;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.enter {
+    width: 356px;
+    height: 40px;
+    background-color: #92CFF2;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px 0;
+}
+
+.e-mail p {
+    margin-left: 10px;
+}
+
+.password p {
+    margin-left: 10px;
 }
