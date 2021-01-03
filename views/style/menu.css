@@ -1,3 +1,7 @@
+* {
+    margin: 0;
+    padding: 0;
+}
 
 .menu {
     position: absolute;
@@ -153,6 +157,8 @@ h1 {
     display: flex;
     align-items: center;
     margin: 5px 0;
+    border: 0;
+    text-decoration: none;
 }
 
 .password {
@@ -163,6 +169,8 @@ h1 {
     display: flex;
     align-items: center;
     margin: 5px 0;
+    border: 0;
+    text-decoration: none;
 }
 
 .enter {
@@ -224,4 +232,16 @@ h1 {
 
 .block {
     display: none;
+}
+
+input {
+    border: 0;
+    background-color: #B6DFF6;
+    display: flex;
+    align-items: center;
+    width: 336px;
+    height: 40px;
+    border-radius: 10px;
+    outline: none;
+    margin-left: 10px;
 }
