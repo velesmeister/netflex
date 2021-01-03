@@ -1,3 +1,5 @@
+import { enterTxt, registerTxt } from "../config.js";
+
 export const initEventListeners = (App) => {
     document.addEventListener('click', (e) => {
         console.log(e.target);
@@ -7,18 +9,20 @@ export const initEventListeners = (App) => {
             toggleClass(document.getElementById("menu"), "open");
         }
     });
-    const create = document.getElementById('create');
-    const creature = document.getElementById('creature')
-    const block = document.getElementById('block')
-    const confirmation = document.getElementById('confirmation')
-    const enter = document.getElementById('enter')
-    const registration = document.getElementById('registration')
-    create.addEventListener('click', () => {
-        creature.style.display = 'none';
-        block.style.display = 'block'
-        confirmation.style.display = 'block'
-        enter.style.display = 'none'
-        registration.style.display = 'block'
+
+    document.getElementById("create").addEventListener('click', (e) => {
+        const txt = e.target.innerHTML === 'Создать' ? registerTxt : enterTxt;
+
+        for (let key in txt) {
+            const element = document.getElementById(key);
+            if ( txt[key].innerHTML ) { element.innerHTML = txt[key].innerHTML; }
+            if ( txt[key].style ) {
+                const style = txt[key].style;
+                for (let styleKey in style) {
+                    element.style[styleKey] = style[styleKey];
+                }
+            }
+        }
     })
 }
 
