@@ -7,6 +7,19 @@ export const initEventListeners = (App) => {
             toggleClass(document.getElementById("menu"), "open");
         }
     });
+    const create = document.getElementById('create');
+    const creature = document.getElementById('creature')
+    const block = document.getElementById('block')
+    const confirmation = document.getElementById('confirmation')
+    const enter = document.getElementById('enter')
+    const registration = document.getElementById('registration')
+    create.addEventListener('click', () => {
+        creature.style.display = 'none';
+        block.style.display = 'block'
+        confirmation.style.display = 'block'
+        enter.style.display = 'none'
+        registration.style.display = 'block'
+    })
 }
 
 const toggleClass = (element, className) => {

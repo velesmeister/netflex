@@ -134,6 +134,7 @@ a{
     flex-direction: row;
     font-size: 24px;
     margin-bottom: 20px;
+    justify-content: center;
 }
 
 h1 {
@@ -181,4 +182,46 @@ h1 {
 
 .password p {
     margin-left: 10px;
+}
+
+.confirmation {
+    width: 356px;
+    height: 40px;
+    background-color: #B6DFF6;
+    border-radius: 20px;
+    text-align: left;
+    line-height: 40px;
+    margin: 5px 0;
+    display: none;
+}
+
+.confirmation p {
+    margin-left: 10px;
+}
+
+.registration {
+    width: 356px;
+    height: 40px;
+    background-color: #92CFF2;
+    border-radius: 20px;
+    text-align: center;
+    line-height: 40px;
+    margin: 5px 0;
+    display: none;
+}
+
+.creatures {
+    display: flex;
+    flex-direction: row;
+    font-size: 24px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.comein a {
+    color: blue;
+}
+
+.block {
+    display: none;
 }
