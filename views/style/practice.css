@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+body{
+  background-color: #ECF5FE;
+}
+
+.content {
+  height: 100vh;
+}
+
+.header {
+  box-shadow: 5px 5px 15px 5px #d9ebfd;
+  background: #d9ebfd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+}
+
+.container {
+  padding: 5% 10%;
+  height: 80vh;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.exam {
+  display: flex;
+  justify-content: center;
+}
+
+
+.but{
+  display: block;
+  font-size: 24px;
+  color: #000000;
+  text-decoration: none;
+  width: 300px;
+  height: 100px;
+  background-color: #CDF4EE;
+  text-align: center;
+  line-height: 100px;
+  font-family: Langar;
+  border: 1px solid #8BE5D7;
+}
+
+.tasks div:nth-child(2n){
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  background-color: #B6DFF6;
+  text-align: center;
+  line-height: 60px;
+  border: 1px solid #5CB6EB;
+  margin: 5px 10px;
+  cursor: pointer;
+}
+
+.tasks div:nth-child(2n + 1){
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  background-color: #B6DFF6;
+  text-align: center;
+  line-height: 60px;
+  border: 1px solid #5CB6EB;
+  margin: 5px 10px;
+  cursor: pointer;
+}
+
+.number:hover {
+  opacity: 0.6;
+}
+
+.number > a {
+  pointer-events: none;
+  color: #000000;
+}
+
+.number:hover {
+  background: #116291;
+}

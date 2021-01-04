@@ -9,7 +9,10 @@
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "express": "~4.16.1",
+    "mongodb": "^3.6.3",
     "morgan": "~1.9.1",
+    "node-fetch": "^2.6.1",
+    "request": "^2.88.2",
     "socket.io": "^3.0.4",
     "socketio": "^1.0.0"
   }
