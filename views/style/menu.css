@@ -1,3 +1,7 @@
+* {
+    margin: 0;
+    padding: 0;
+}
 
 .menu {
     position: absolute;
@@ -143,6 +147,7 @@ h1 {
 
 .create a {
     color: blue;
+    cursor: pointer;
 }
 
 .e-mail {
@@ -153,6 +158,8 @@ h1 {
     display: flex;
     align-items: center;
     margin: 5px 0;
+    border: 0;
+    text-decoration: none;
 }
 
 .password {
@@ -163,6 +170,8 @@ h1 {
     display: flex;
     align-items: center;
     margin: 5px 0;
+    border: 0;
+    text-decoration: none;
 }
 
 .enter {
@@ -224,4 +233,55 @@ h1 {
 
 .block {
     display: none;
+}
+
+input {
+    border: 0;
+    background-color: #B6DFF6;
+    display: flex;
+    align-items: center;
+    width: 336px;
+    height: 40px;
+    border-radius: 10px;
+    outline: none;
+    margin-left: 10px;
+}
+
+.modals {
+    width: 50%;
+    height: 50%;
+    margin-left: 25%;
+    margin-top: 10%;
+    background-color: #B6DFF6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.modal {
+    width: 100%;
+    height: 100%;
+    display: none;
+    backdrop-filter: blur(5px);
+    z-index: 999999;
+    position: fixed;
+}
+
+.correct {
+    display: flex;
+    flex-direction: row;
+}
+
+.goods {
+    margin-left: 5px;
+}
+
+.wrong {
+    display: flex;
+    flex-direction: row;
+}
+
+.bads {
+    margin-left: 5px;
 }

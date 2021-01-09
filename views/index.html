@@ -28,6 +28,24 @@
         </a>
     </div>
 
+
+    <div class="modal" id="modal">
+        <div class="modals">
+            <div class="correct">
+                <div class="good">Решено правильно:</div>
+                <div class="goods" id="goods">0</div>
+            </div>
+            <div class="wrong">
+                <div class="bad">Решено неправильно:</div>
+                <div class="bads" id="bads">0</div>
+            </div>
+            <div class="mistakes">
+                <button>Работа над ошибками</button>
+            </div>
+        </div>
+    </div>
+
+
     <div class="menu-overlay" id="menu-overlay">
             <div class="login">
                 <div class="entrance">
@@ -38,11 +56,10 @@
                         <div class="create"><a id="create">Создать</a></div>
                     </div>
 
-                    <input class="e-mail" id="e-mail"><p>E-mail или телефон</p></input>
-                    <input class="password" id="password"> <p>Пароль</p></input>
-                    <input class="confirmation" id="confirmation"><p>Подтвердите пароль</p></input>
-
-                    <button class="enter" id="enter"><p id="auth-txt">Вход</p></button>
+                    <div class="e-mail"><input placeholder="E-mail или телефон"/></div>
+                    <div class="password"><input placeholder="Пароль"/></div>
+                    <div class="confirmation" id="confirmation"><input placeholder="Подтвердите пароль"/></div>
+                    <div class="enter" id="enter"><p id="auth-txt">Вход</p></div>
                 </div>
             </div>
             <div class="menus">

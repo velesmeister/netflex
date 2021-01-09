@@ -4,8 +4,8 @@ export const theoryLink = '#theory';
 
 
 // Colors
-export const green = 'green';
-export const red = 'red';
+export const green = '#79E2D2';
+export const red = '#F1042F';
 export const white = 'white';
 export const black = 'black';
 export const grey = 'dimgrey'
