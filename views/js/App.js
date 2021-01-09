@@ -8,6 +8,7 @@ export class App {
     constructor() {
         this.socket = io();
         this.task = undefined;
+        this.user = undefined;
 
         this.router = new Router([
             new Route('task', 'task.html'),
@@ -15,7 +16,7 @@ export class App {
             new Route('theory', 'theory.html')
         ]);
 
-        initEventListeners();
+        initEventListeners(this.setUser);
         this.logicListen();
     }
 
@@ -33,6 +34,11 @@ export class App {
                 })
             }
         });
+    }
+
+    setUser = (user) => {
+        this.user = user;
+        console.log('Seted user: ', this.user)
     }
 
     socketListen () {

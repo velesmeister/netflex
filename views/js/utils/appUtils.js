@@ -1,6 +1,6 @@
 import { enterTxt, registerTxt } from "../config.js";
 
-export const initEventListeners = (App) => {
+export const initEventListeners = (setUser) => {
     document.addEventListener('click', (e) => {
         console.log(e.target);
         if (e.target.id === "menu-toggle") {
@@ -23,6 +23,29 @@ export const initEventListeners = (App) => {
                 }
             }
         }
+    })
+
+    document.getElementById("enter").addEventListener('click', () => {
+        const eMail = document.getElementById("e-mail").value;
+        const password = document.getElementById("password").value;
+        const passwordConfirm = document.getElementById("confirmation").value;
+        if (passwordConfirm) {
+            // Register
+            if (passwordConfirm !== password) {
+                alert('Password are different');
+                return;
+            }
+            console.log('Register: ');
+        } else {
+            // Enter
+            console.log('Enter');
+        }
+
+
+        setUser( {id: 0} );
+
+        console.log('E-mail: ', eMail);
+        console.log('Password: ', password);
     })
 }
 
