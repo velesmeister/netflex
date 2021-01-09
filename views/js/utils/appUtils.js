@@ -79,3 +79,14 @@ export const loaderOff = () => {
     document.getElementById("loader").style.display = 'none';
     document.getElementById("root").style.display = 'block';
 }
+
+export const toggleResultsModal = (wrongAnswersCount, correctAnswersCount) => {
+    const modal = document.getElementById('modal');
+    if(modal.style.display === 'block') {
+        modal.style.display = 'none';
+        return;
+    }
+    modal.style.display = 'block';
+    document.getElementById("correct-answers-count").innerHTML = correctAnswersCount.toString();
+    document.getElementById("incorrect-answers-count").innerHTML = wrongAnswersCount.toString();
+}

@@ -33,6 +33,15 @@ export class App {
                     loaderOff();
                 })
             }
+            if(e.target.id === 'pass-all') {
+                window.location.href = taskLink;
+                loaderOn();
+                this.socket.emit('getTask', 0, (resp) => {
+                    console.log('Got response: ', resp);
+                    this.task = new Task(resp.data);
+                    loaderOff();
+                })
+            }
         });
     }
 

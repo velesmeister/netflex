@@ -1,4 +1,5 @@
 import {green, red, white, black, grey } from "../config.js";
+import { toggleResultsModal } from "../utils/appUtils.js";
 
 export class Task {
 
@@ -27,6 +28,7 @@ export class Task {
         this.answerOptions = document.getElementById("answerOptions");
         this.answerNum = document.getElementById("answerNum");
         this.answerExp = document.getElementById("answerExplanation");
+
         this.restore();
         this.initDom();
         this.renderQuestion();
@@ -42,7 +44,16 @@ export class Task {
         this.answerOptions.innerHTML = '';
     }
 
-    initDom () {
+    restart (questions) {
+        clearInterval(this.timer);
+        this.questions = questions;
+        this.currentQuestion = 0;
+        this.restore();
+        this.initDom(true);
+        this.renderQuestion();
+    }
+
+    initDom (isRestore=false) {
         let questionsList = '';
         for (let i = 0; i < this.questions.length; ++i) {
             questionsList += `<div class="number-tasks" id="${i + 1}"><a class="questionSelector">${i + 1}</a></div>`;
@@ -50,26 +61,30 @@ export class Task {
         this.questionsList.innerHTML = questionsList;
 
         // Add listeners
-        document.addEventListener('click', (e) => {
-            if(e.target.className === 'option') {
-                this.questions[this.currentQuestion].selectedAns = e.target.getAttribute("value");
-                this.markSelectedAns();
-            }
-
-            if(e.target.className === 'number-tasks') {
-                if(!this.questions[this.currentQuestion].selectedAns) {
-                    document.getElementById((this.currentQuestion + 1).toString()).style.background = '#B6DFF6';
-                    document.getElementById((this.currentQuestion + 1).toString()).children[0].style.color = black;
-                } else {
+        if(!isRestore) {
+            document.addEventListener('click', (e) => {
+                if (e.target.className === 'option') {
+                    this.questions[this.currentQuestion].selectedAns = e.target.getAttribute("value");
                     this.markSelectedAns();
                 }
-                this.currentQuestion = parseInt(e.target.id) - 1;
-                this.renderQuestion();
-            }
-        });
 
-        this.questionSupportBtn.addEventListener('click', () => { this.showSupport() });
+                if (e.target.className === 'number-tasks') {
+                    if (!this.questions[this.currentQuestion].selectedAns) {
+                        document.getElementById((this.currentQuestion + 1).toString()).style.background = '#B6DFF6';
+                        document.getElementById((this.currentQuestion + 1).toString()).children[0].style.color = black;
+                    }
 
+                    this.currentQuestion = parseInt(e.target.id) - 1;
+                    this.renderQuestion();
+                }
+            });
+
+            this.questionSupportBtn.addEventListener('click', () => {
+                this.showSupport()
+            });
+        }
+
+        document.getElementById("timer").innerText = '00:00';
         this.timer = setInterval( () => {
             try {
                 let [min, sec] = document.getElementById("timer").innerText.split(':').map(t => parseInt(t));
@@ -114,24 +129,45 @@ export class Task {
             document.getElementById((this.currentQuestion + 1).toString()).style.background = selectedAns === this.questions[this.currentQuestion].otvet ? green : red;
             if (selectedAns !== this.questions[this.currentQuestion].otvet) {
                 this.showSupport();
+            } else {
+                this.showNext();
             }
         }
         this.checkIsOver();
     }
 
+    showNext() {
+        if (this.currentQuestion < this.questions.length - 1) {
+            this.renderQuestion(this.currentQuestion++);
+        }
+    }
+
     checkIsOver () {
         let correctAnswers = 0;
         let wrongAnswers = 0;
+        const wrongAnswersList = [];
         for(let question of this.questions) {
             if (question.selectedAns) {
                 correctAnswers += question.selectedAns === question.otvet;
-                wrongAnswers += question.selectedAns !== question.otvet;
+                if (question.selectedAns !== question.otvet) {
+                    wrongAnswersList.push({...question, selectedAns: undefined});
+                    wrongAnswers++;
+                }
             } else {
                 return;
             }
         }
-        document.getElementById('modal').style.display = 'block';
-        correctAnswers = document.getElementById('goods');
+
+        this.showResults(wrongAnswers, correctAnswers, wrongAnswersList);
+    }
+
+    showResults (wrongAnswers, correctAnswers, wrongAnswersList) {
+        toggleResultsModal(wrongAnswers, correctAnswers);
+
+        document.getElementById("workForMistakesBtn").addEventListener('click', () => {
+            toggleResultsModal();
+            this.restart(wrongAnswersList);
+        })
     }
 
     showSupport() {

@@ -34,7 +34,11 @@ body{
 
 .exam {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+}
+
+.exam > a {
+  margin-bottom: 40px;
 }
 
 
