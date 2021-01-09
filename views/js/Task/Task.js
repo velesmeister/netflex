@@ -130,8 +130,8 @@ export class Task {
                 return;
             }
         }
-
-        alert(`The task is over.\nCorrect answers: ${correctAnswers}\nWrong answers: ${wrongAnswers}`);
+        document.getElementById('modal').style.display = 'block';
+        correctAnswers = document.getElementById('goods');
     }
 
     showSupport() {
