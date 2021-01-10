@@ -68,3 +68,19 @@ io.on('connection', (socket) => {
 server.listen(port, () => {
     console.log(`Listening on port: ${port}`);
 })
+
+const Joi = require('joi');
+Joi.objectId = require('joi-objectid')(Joi);
+const mongoose = require('mongoose');
+const users = require('./views/js/Router/user.js');
+const auth = require('./views/js/Router/auth.js');
+
+
+
+mongoose.connect('mongodb+srv://veles:23347835@cluster0.kagno.mongodb.net/netflex?retryWrites=true&w=majority',
+    { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => console.log('Now connected to MongoDB!'))
+    .catch(err => console.error('Something went wrong', err));
+
+app.use(express.json());
+app.use('/api/users', users);
