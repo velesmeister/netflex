@@ -25,12 +25,6 @@ body{
   height: 10vh;
 }
 
-.container {
-  padding: 5% 10%;
-  height: 80vh;
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-}
 
 .exam {
   display: flex;
@@ -39,47 +33,6 @@ body{
 
 .exam > a {
   margin-bottom: 40px;
-}
-
-
-.but{
-  display: block;
-  font-size: 24px;
-  color: #000000;
-  text-decoration: none;
-  width: 300px;
-  height: 100px;
-  background-color: #CDF4EE;
-  text-align: center;
-  line-height: 100px;
-  font-family: Langar;
-  border: 1px solid #8BE5D7;
-}
-
-.tasks div:nth-child(2n){
-  display: inline-block;
-  width: 60px;
-  height: 60px;
-  font-size: 24px;
-  background-color: #B6DFF6;
-  text-align: center;
-  line-height: 60px;
-  border: 1px solid #5CB6EB;
-  margin: 5px 10px;
-  cursor: pointer;
-}
-
-.tasks div:nth-child(2n + 1){
-  display: inline-block;
-  width: 60px;
-  height: 60px;
-  font-size: 24px;
-  background-color: #B6DFF6;
-  text-align: center;
-  line-height: 60px;
-  border: 1px solid #5CB6EB;
-  margin: 5px 10px;
-  cursor: pointer;
 }
 
 .number:hover {
@@ -93,4 +46,199 @@ body{
 
 .number:hover {
   background: #116291;
+}
+
+@media screen and (min-width: 900px){
+  .container {
+    padding-top: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+    height: 80vh;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .tasks {
+    display : inline-block;
+    vertical-align: top;
+    text-align: center;
+    line-height: normal;
+  }
+
+  .but{
+    font-size: 24px;
+    color: #000000;
+    text-decoration: none;
+    width: 300px;
+    height: 100px;
+    background-color: #CDF4EE;
+    text-align: center;
+    line-height: 100px;
+    border: 1px solid #8BE5D7;
+  }
+
+  .tasks div:nth-child(2n){
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    background-color: #B6DFF6;
+    text-align: center;
+    line-height: 60px;
+    border: 1px solid #5CB6EB;
+    margin: 5px 10px;
+    cursor: pointer;
+  }
+
+  .tasks div:nth-child(2n + 1){
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    background-color: #B6DFF6;
+    text-align: center;
+    line-height: 60px;
+    border: 1px solid #5CB6EB;
+    margin: 5px 10px;
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 900px) and (min-width: 480px){
+  .container {
+    padding-top: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+    height: 80vh;
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+  }
+
+  .tasks {
+    display : inline-block;
+    vertical-align: top;
+    text-align: center;
+    line-height: normal;
+  }
+
+  .but{
+    font-size: 24px;
+    color: #000000;
+    text-decoration: none;
+    width: 200px;
+    height: 70px;
+    background-color: #CDF4EE;
+    text-align: center;
+    line-height: 70px;
+    border: 1px solid #8BE5D7;
+  }
+
+  .tasks div:nth-child(2n){
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    background-color: #B6DFF6;
+    text-align: center;
+    line-height: 60px;
+    border: 1px solid #5CB6EB;
+    margin: 5px 10px;
+    cursor: pointer;
+  }
+
+  .tasks div:nth-child(2n + 1) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    background-color: #B6DFF6;
+    text-align: center;
+    line-height: 60px;
+    border: 1px solid #5CB6EB;
+    margin: 5px 10px;
+    cursor: pointer;
+  }
+
+  .exam{
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .tasks {
+    display: block;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    padding-top: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+    height: 80vh;
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+  }
+
+  .tasks {
+    display : inline-block;
+    vertical-align: top;
+    text-align: center;
+    line-height: normal;
+  }
+
+  .but{
+    font-size: 24px;
+    color: #000000;
+    text-decoration: none;
+    width: 200px;
+    height: 70px;
+    background-color: #CDF4EE;
+    text-align: center;
+    line-height: 70px;
+    border: 1px solid #8BE5D7;
+  }
+
+  .tasks div:nth-child(2n){
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    font-size: 24px;
+    background-color: #B6DFF6;
+    text-align: center;
+    line-height: 60px;
+    border: 1px solid #5CB6EB;
+    margin: 5px 10px;
+    cursor: pointer;
+  }
+
+  .tasks div:nth-child(2n + 1) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    font-size: 24px;
+    background-color: #B6DFF6;
+    text-align: center;
+    line-height: 60px;
+    border: 1px solid #5CB6EB;
+    margin: 5px 10px;
+    cursor: pointer;
+  }
+
+  .exam{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }

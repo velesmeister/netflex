@@ -11,6 +11,7 @@ export class App {
         this.user = undefined;
 
         this.router = new Router([
+            new Route('progress', 'progress.html'),
             new Route('task', 'task.html'),
             new Route('practice', 'practice.html', true),
             new Route('theory', 'theory.html')

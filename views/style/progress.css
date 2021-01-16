@@ -1,0 +1,252 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #ECF5FE;
+}
+
+.content {
+    height: 100vh;
+}
+
+.header {
+    box-shadow: 5px 5px 15px 5px #d9ebfd;
+    background: #d9ebfd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+}
+
+.first-ticket {
+    display: flex;
+    flex-direction: row;
+}
+
+.first-tickets {
+    font-size: 24px;
+}
+
+.first-ticketImg {
+    width: 24px;
+    height: 24px;
+    border-radius: 15px;
+}
+
+.first-sign {
+    display: flex;
+    flex-direction: row;
+}
+
+.first-signs {
+    font-size: 24px;
+}
+
+.first-signImg {
+    width: 24px;
+    height: 24px;
+    border-radius: 15px;
+}
+
+.all-ticket {
+    display: flex;
+    flex-direction: row;
+}
+
+.all-tickets {
+    font-size: 24px;
+}
+
+.all-ticketImg {
+    width: 24px;
+    height: 24px;
+    border-radius: 15px;
+}
+
+.all-sign {
+    display: flex;
+    flex-direction: row;
+}
+
+.all-signs {
+    font-size: 24px;
+}
+
+.all-signImg {
+    width: 24px;
+    height: 24px;
+    border-radius: 15px;
+}
+
+.exam {
+    display: flex;
+    flex-direction: row;
+}
+
+.exams {
+    font-size: 24px;
+}
+
+.examImg {
+    width: 24px;
+    height: 24px;
+    border-radius: 15px;
+}
+
+.line1 {
+    background-color: black;
+    opacity: 0.3;
+    height: 1px;
+    width: 100%;
+}
+
+.theory-progress {
+    font-size: 24px;
+}
+
+.line2 {
+    background-color: black;
+    opacity: 0.3;
+    height: 1px;
+    width: 100%;
+}
+
+.ticket-progress {
+    font-size: 24px;
+}
+
+.line3 {
+    background-color: black;
+    opacity: 0.3;
+    height: 1px;
+    width: 100%;
+}
+
+.scan-progress {
+    font-size: 24px;
+}
+
+.graf {
+    margin: 20px;
+    width: 90%;
+    height: 150px;
+    background: orange;
+}
+
+.progress div:nth-child(n) {
+    margin-bottom: 10px;
+}
+
+.theory {
+    display: flex;
+    flex-direction: row;
+}
+
+.ticket {
+    display: flex;
+    flex-direction: row;
+}
+
+.scan {
+    display: flex;
+    flex-direction: row;
+}
+
+.theory-num {
+    font-size: 24px;
+    margin-left: 5px;
+    opacity: 0.5;
+}
+
+.ticket-num {
+    font-size: 24px;
+    margin-left: 5px;
+    opacity: 0.5;
+}
+
+.scan-num {
+    font-size: 24px;
+    margin-left: 5px;
+    opacity: 0.5;
+}
+
+@media screen and (min-width: 900px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding-top: 5%;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    .progress {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .first-tickets {
+        font-size: 20px;
+    }
+
+    .first-signs {
+        font-size: 20px;
+    }
+
+    .all-tickets {
+        font-size: 20px;
+    }
+
+    .all-signs {
+        font-size: 20px;
+    }
+
+    .exams {
+        font-size: 20px;
+    }
+
+    .container {
+        padding-top: 5%;
+    }
+
+    .theory-progress {
+        font-size: 20px;
+    }
+
+    .ticket-progress {
+        font-size: 20px;
+    }
+
+    .scan-progress {
+        font-size: 20px;
+    }
+
+    .theory-num {
+        font-size: 20px;
+        margin-left: 5px;
+        opacity: 0.5;
+    }
+
+    .ticket-num {
+        font-size: 20px;
+        margin-left: 5px;
+        opacity: 0.5;
+    }
+
+    .scan-num {
+        font-size: 20px;
+        margin-left: 5px;
+        opacity: 0.5;
+    }
+
+    .graf {
+        margin: 20px;
+        width: 90%;
+        height: 100px;
+        background: orange;
+    }
+}
