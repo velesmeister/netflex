@@ -1,5 +1,6 @@
 import { menuOff } from "../utils/appUtils.js";
 import { initTheory } from "../Theory/theory.js";
+import { toggleCharts } from "../progress/progress.js";
 
 export function Router(routes) {
     try {
@@ -57,6 +58,10 @@ Router.prototype = {
                     // HERE AFTER RENDER EVENTS
                     if (htmlName === 'theory.html') {
                         initTheory();
+                    }
+
+                    if (htmlName === 'progress.html') {
+                        toggleCharts();
                     }
 
                     document.getElementById("style").setAttribute("href", `style/${htmlName.split('.')[0]}.css`);

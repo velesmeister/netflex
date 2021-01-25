@@ -11,6 +11,10 @@ const download = function(uri, filename, callback){
 const uri = "mongodb+srv://veles:23347835@cluster0.kagno.mongodb.net/netflex?retryWrites=true&w=majority";
 const MongoClient = require('mongodb').MongoClient;
 
+const updateTheory = async () => {
+    console.log('In update theory');
+}
+
 const updateDbTasks = async () => {
 
     console.log('In update db');
