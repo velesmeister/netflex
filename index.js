@@ -41,7 +41,7 @@ io.on('connection', (socket) => {
 
     socket.on('getTask', (taskNum, callback) => {
         console.log(`Got task num: ${taskNum}`);
-        const mongoClient = new MongoClient(uri, { useNewUrlParser: true });
+        const mongoClient = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true,});
         mongoClient.connect((err, client) => {
             if (err) {
                 return console.log(err);
@@ -50,13 +50,18 @@ io.on('connection', (socket) => {
             const db = client.db("netflex");
             const collection = db.collection("tasks");
 
-            collection.find({biletNumber: taskNum}).toArray((err, data) => {
-                if(err) return console.log(err);
+            const objectToFind = {};
+            if(taskNum > 0) {
+                objectToFind.biletNumber = taskNum;
+            }
+
+            collection.find(objectToFind).toArray((err, data) => {
+                if (err) return console.log(err);
 
                 callback({data});
-            });
+                client.close();
 
-            client.close();
+            });
         });
     })
 

@@ -24,15 +24,15 @@ body{
 }
 
 .content {
-    padding: 5% 10%;
-}
-
-.content {
     display: grid;
-    grid-template-rows: 10vh 10vh auto;
+    grid-template-rows: 10vh 81vh;
+    padding-top: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 .container {
+    padding-top: 10px;
     display: grid;
     grid-template-columns: 20fr 1fr 9fr;
 }
@@ -81,15 +81,10 @@ body{
     font-family: Langar;
 }
 
-.timer {
-    flex-direction: row;
-    display: flex;
-    align-items: center;
-}
-
 .clock {
     width: 40px;
     height: 40px;
+    margin-left: 10px;
 }
 
 .time {
@@ -157,7 +152,7 @@ body{
 
 .options {
     cursor: pointer;
-    height: 70%;
+    max-height: 80%;
     font-family: Langar;
     font-size: 20px;
 }
@@ -165,11 +160,11 @@ body{
 .option {
     display: flex;
     align-items: center;
-    height: 33%;
+    height: 17%;
 }
 
 .support {
-    height: 30%;
+    min-height: auto;
     display: flex;
     align-items: center;
     font-family: Langar;
@@ -190,4 +185,12 @@ body{
 
 .comment:hover {
     opacity: 0.6;
+}
+
+.timer {
+    display: flex;
+    flex-direction: row;
+}
+.number-task {
+    overflow-x: scroll;
 }

@@ -8,14 +8,16 @@ export class App {
     constructor() {
         this.socket = io();
         this.task = undefined;
+        this.user = undefined;
 
         this.router = new Router([
+            new Route('progress', 'progress.html'),
             new Route('task', 'task.html'),
             new Route('practice', 'practice.html', true),
             new Route('theory', 'theory.html')
         ]);
 
-        initEventListeners();
+        initEventListeners(this.setUser);
         this.logicListen();
     }
 
@@ -32,7 +34,21 @@ export class App {
                     loaderOff();
                 })
             }
+            if(e.target.id === 'pass-all') {
+                window.location.href = taskLink;
+                loaderOn();
+                this.socket.emit('getTask', 0, (resp) => {
+                    console.log('Got response: ', resp);
+                    this.task = new Task(resp.data);
+                    loaderOff();
+                })
+            }
         });
+    }
+
+    setUser = (user) => {
+        this.user = user;
+        console.log('Seted user: ', this.user)
     }
 
     socketListen () {
